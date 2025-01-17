@@ -56,6 +56,11 @@ constexpr auto max(const iterator_t &begin, const iterator_t &end) {
     return max_value;
 }
 
+template <typename number_t>
+constexpr number_t abs(number_t x) {
+    return x < 0 ? -x : x;
+}
+
 } // namespace constexpr_math
 
 #endif // CONSTEXPR_MATH_HPP
