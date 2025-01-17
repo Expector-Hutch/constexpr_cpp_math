@@ -61,6 +61,24 @@ constexpr number_t abs(number_t x) {
     return x < 0 ? -x : x;
 }
 
+template <typename base_t, typename exponent_t>
+constexpr base_t pow(base_t base, exponent_t exponent) {
+    if constexpr (::std::is_integral<exponent_t>::value) {
+        if constexpr (exponent > 0) {
+            base_t result = 1;
+            while (exponent != 0) {
+                if (exponent % 2 == 1) { result *= base; }
+                base *= base;
+                exponent /= 2;
+            }
+            return result;
+        } else if constexpr (exponent == 0) {
+            return 1;
+        }
+    }
+    // todo
+}
+
 } // namespace constexpr_math
 
 #endif // CONSTEXPR_MATH_HPP
