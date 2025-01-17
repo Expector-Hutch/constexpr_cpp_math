@@ -1,0 +1,10 @@
+Language: Cpp
+BasedOnStyle: Microsoft
+BreakBeforeBraces: Attach
+ColumnLimit: 80
+AlwaysBreakTemplateDeclarations: true
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
