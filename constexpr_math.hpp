@@ -6,6 +6,16 @@
 
 namespace constexpr_math {
 
+inline namespace type {
+
+template <typename number_t>
+struct div_t {
+    number_t quotient;
+    number_t remainder;
+};
+
+} // namespace type
+
 inline namespace constant {
 
 // π = circumference/diameter
@@ -126,6 +136,11 @@ constexpr auto max(const iterator_t &begin, const iterator_t &end) {
 template <typename number_t>
 constexpr number_t abs(number_t x) {
     return x < 0 ? -x : x;
+}
+
+template <typename number_t>
+constexpr auto div(number_t x, number_t y) {
+    return div_t<number_t>{x / y, x % y};
 }
 
 template <typename base_t, typename exponent_t>
